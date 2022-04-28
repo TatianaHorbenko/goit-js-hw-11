@@ -40,7 +40,7 @@ async function onSearch(event) {
         return;
     }
 
-    loadMoreBtn.show();
+    // loadMoreBtn.show();
     loadMoreBtn.disable();
     imagesApiFetch.resetPage();
 
