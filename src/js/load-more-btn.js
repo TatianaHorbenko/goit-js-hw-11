@@ -19,7 +19,6 @@ enable(){
 
 disable(){
     this.refs.button.disabled = true;
-    this.refs.label.textContent = 'Loading....'
 }
 
 show(){
