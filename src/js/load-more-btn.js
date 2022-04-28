@@ -14,11 +14,12 @@ getRefs(selector){
 
 enable(){
     this.refs.button.disabled = false;
-    // this.refs.label.textContent = 'Load more';
+    this.refs.label.textContent = 'Load more';
 }
 
 disable(){
     this.refs.button.disabled = true;
+    this.refs.label.textContent = ''
 }
 
 show(){
