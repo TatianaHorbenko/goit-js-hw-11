@@ -2,7 +2,7 @@ import './sass/main.scss';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import ImagesApiFetch from './js/fetch-api-server'
+import ImagesApiFetch from './js/api'
 import galleryTpl from './templates/gallaryMarkup.hbs';
 import LoadMoreBtn from './js/load-more-btn';
 import scroll from './js/smooth-scroll';

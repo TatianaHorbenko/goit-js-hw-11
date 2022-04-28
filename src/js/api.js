@@ -34,3 +34,5 @@ export default class ImagesApiFetch {
         this.searchQuery = newQwery;
     }
 };
+
+
