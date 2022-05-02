@@ -47,9 +47,13 @@ async function onSearch(event) {
    
     loadMoreBtn.show();
     loadMoreBtn.disable();
-    loadMoreBtn.hide();
+
     imagesApiFetch.resetPage();
 
+   
+
+
+ 
     try {
         const data = await imagesApiFetch.fetchPixabayImages();
         
@@ -71,8 +75,9 @@ async function onSearch(event) {
             
           }
           if (data.totalHits< 40) {
-            Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
-            console.log('loadMoreBtn.hide()');
+            loadMoreBtn.hide();
+            
+            //  console.log('loadMoreBtn.hide()');
         
           }
     
