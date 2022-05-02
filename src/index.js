@@ -47,13 +47,9 @@ async function onSearch(event) {
    
     loadMoreBtn.show();
     loadMoreBtn.disable();
-
     imagesApiFetch.resetPage();
 
-   
-
-
- 
+    
     try {
         const data = await imagesApiFetch.fetchPixabayImages();
         
@@ -77,7 +73,7 @@ async function onSearch(event) {
           if (data.totalHits< 40) {
             loadMoreBtn.hide();
             
-            //  console.log('loadMoreBtn.hide()');
+             console.log('loadMoreBtn.hide()');
         
           }
     
