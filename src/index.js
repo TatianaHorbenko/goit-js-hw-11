@@ -26,12 +26,16 @@ const imagesApiFetch = new ImagesApiFetch();
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 
+
+  
 // ====================================onSearch========================================
 
 async function onSearch(event) {
     event.preventDefault();
 
     cleargalleryMarkup();
+
+    
 
     imagesApiFetch.query = event.currentTarget.elements.searchQuery.value;
 
@@ -40,15 +44,19 @@ async function onSearch(event) {
         return;
     }
 
-    // loadMoreBtn.show();
+   
+    loadMoreBtn.show();
     loadMoreBtn.disable();
+    loadMoreBtn.hide();
     imagesApiFetch.resetPage();
 
     try {
         const data = await imagesApiFetch.fetchPixabayImages();
+        
 
         if (data.totalHits === 0) {
         Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+        
         }
 
         if (data.totalHits > 0) {
@@ -56,8 +64,19 @@ async function onSearch(event) {
 
             appendgalleryMarkup(data.hits);
             loadMoreBtn.enable();
+            
         }
-    }
+        if (data.totalHits >= 40) {
+            console.log('loadMoreBtn.show()');
+            
+          }
+          if (data.totalHits< 40) {
+            Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
+            console.log('loadMoreBtn.hide()');
+        
+          }
+    
+            }
     catch (error) {
         console.log(error);
     }
